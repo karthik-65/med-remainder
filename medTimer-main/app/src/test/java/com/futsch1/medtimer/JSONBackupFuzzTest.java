@@ -6,9 +6,6 @@ import android.util.Log;
 
 import com.code_intelligence.jazzer.api.FuzzedDataProvider;
 import com.code_intelligence.jazzer.junit.FuzzTest;
-import com.futsch1.medtimer.database.JSONBackup;
-import com.futsch1.medtimer.database.JSONMedicineBackup;
-import com.futsch1.medtimer.database.JSONReminderEventBackup;
 import com.futsch1.medtimer.database.MedicineRepository;
 
 import java.util.List;

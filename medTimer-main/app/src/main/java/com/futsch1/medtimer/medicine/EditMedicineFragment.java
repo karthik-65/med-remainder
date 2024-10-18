@@ -91,14 +91,11 @@ public class EditMedicineFragment extends Fragment implements IconDialog.Callbac
         setupOpenCalendarButton();
 
         boolean useColor = editMedicineArgs.getUseColor();
-        setupEnableColor(useColor);
-        setupColorButton(useColor);
 
         setupSwiping(recyclerView);
         setupAddReminderButton();
 
         iconId = editMedicineArgs.getIconId();
-        setupSelectIcon();
 
         medicineViewModel.getLiveReminders(medicineId).observe(requireActivity(), adapter::submitList);
 
@@ -129,36 +126,9 @@ public class EditMedicineFragment extends Fragment implements IconDialog.Callbac
         });
     }
 
-    private void setupEnableColor(boolean useColor) {
-        enableColor = fragmentEditMedicine.findViewById(R.id.enableColor);
-        enableColor.setChecked(useColor);
-        enableColor.setOnCheckedChangeListener((buttonView, isChecked) -> colorButton.setVisibility(isChecked ? View.VISIBLE : View.GONE));
-    }
 
-    private void setupColorButton(boolean useColor) {
-        color = editMedicineArgs.getColor();
-        colorButton = fragmentEditMedicine.findViewById(R.id.selectColor);
-        ViewColorHelper.setButtonBackground(colorButton, color);
-        colorButton.setOnClickListener(v -> {
-            ColorPickerDialog.Builder builder = new ColorPickerDialog.Builder(requireContext())
-                    .setTitle(R.string.color)
-                    .setPositiveButton(getString(R.string.confirm),
-                            (ColorEnvelopeListener) (envelope, fromUser) -> {
-                                color = envelope.getColor();
-                                ViewColorHelper.setButtonBackground(colorButton, color);
-                                Toast.makeText(requireContext(), R.string.change_color_toast, Toast.LENGTH_LONG).show();
-                            })
-                    .setNegativeButton(getString(R.string.cancel),
-                            (dialogInterface, i) -> dialogInterface.dismiss())
-                    .attachAlphaSlideBar(false)
-                    .setBottomSpace(12);
 
-            builder.show();
-            // Workaround to make the brightness slider be setup correctly
-            new Handler(requireActivity().getMainLooper()).post(() -> builder.getColorPickerView().setInitialColor(color));
-        });
-        colorButton.setVisibility(useColor ? View.VISIBLE : View.GONE);
-    }
+
 
     private void setupSwiping(RecyclerView recyclerView) {
         SwipeHelper.createLeftSwipeTouchHelper(requireContext(), viewHolder -> deleteItem(requireContext(), viewHolder.getItemId(), viewHolder.getBindingAdapterPosition()))
@@ -170,24 +140,7 @@ public class EditMedicineFragment extends Fragment implements IconDialog.Callbac
         fab.setOnClickListener(view -> DialogHelper.showTextInputDialog(requireContext(), R.string.add_reminder, R.string.create_reminder_dosage_hint, this::createReminder));
     }
 
-    private void setupSelectIcon() {
-        selectIconButton = fragmentEditMedicine.findViewById(R.id.selectIcon);
-        selectIconButton.setIcon(MedicineIcons.getIconDrawable(iconId));
 
-        FragmentManager fragmentManager = getChildFragmentManager();
-        IconDialog dialog = (IconDialog) fragmentManager.findFragmentByTag(ICON_DIALOG_TAG);
-        IconDialogSettings.Builder builder = new IconDialogSettings.Builder();
-        builder.setShowClearBtn(true);
-        builder.setShowSelectBtn(false);
-        IconDialog iconDialog = dialog != null ? dialog
-                : IconDialog.newInstance(builder.build());
-
-        selectIconButton.setOnClickListener(v -> {
-                    iconDialog.setSelectedIconIds(List.of(iconId));
-                    iconDialog.show(fragmentManager, ICON_DIALOG_TAG);
-                }
-        );
-    }
 
     private void deleteItem(Context context, long itemId, int adapterPosition) {
         DeleteHelper deleteHelper = new DeleteHelper(context);

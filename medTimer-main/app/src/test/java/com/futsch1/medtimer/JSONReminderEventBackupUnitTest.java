@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import android.graphics.Color;
 
-import com.futsch1.medtimer.database.JSONReminderEventBackup;
 import com.futsch1.medtimer.database.ReminderEvent;
 
 import org.junit.jupiter.api.Test;

@@ -53,8 +53,6 @@ public class OverviewFragment extends Fragment {
         thread.start();
 
         RecyclerView latestReminders = setupLatestReminders();
-        new NextReminders(fragmentOverview, this, medicineViewModel);
-        setupLogManualDose();
         setupSwipeEdit(latestReminders);
         setupSwipeDelete(latestReminders);
         setupFilterButton();
@@ -84,15 +82,7 @@ public class OverviewFragment extends Fragment {
         return latestReminders;
     }
 
-    private void setupLogManualDose() {
-        Button logManualDose = fragmentOverview.findViewById(R.id.logManualDose);
-        logManualDose.setOnClickListener(v -> {
-            Handler handler = new Handler(thread.getLooper());
-            // Run the setup of the drop down in a separate thread to access the database
-            handler.post(() -> new ManualDose(requireContext(), medicineViewModel.medicineRepository, this.requireActivity()).
-                    logManualDose());
-        });
-    }
+
 
     private void setupSwipeEdit(RecyclerView latestReminders) {
         SwipeHelper swipeHelperEdit = new SwipeHelper(requireContext(), ItemTouchHelper.RIGHT, 0xFF006400, android.R.drawable.ic_menu_edit) {

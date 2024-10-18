@@ -24,9 +24,9 @@ import com.google.android.material.button.MaterialButton;
 public class ReminderViewHolder extends RecyclerView.ViewHolder {
     private final EditText editTime;
     private final EditText editAmount;
-    private final MaterialButton advancedSettings;
+//    private final MaterialButton advancedSettings;
     private final FragmentActivity fragmentActivity;
-    private final TextView advancedSettingsSummary;
+//    private final TextView advancedSettingsSummary;
 
     private Reminder reminder;
 
@@ -34,8 +34,8 @@ public class ReminderViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         editTime = itemView.findViewById(R.id.editReminderTime);
         editAmount = itemView.findViewById(R.id.editAmount);
-        advancedSettings = itemView.findViewById(R.id.open_advanced_settings);
-        advancedSettingsSummary = itemView.findViewById(R.id.advancedSettingsSummary);
+//        advancedSettings = itemView.findViewById(R.id.open_advanced_settings);
+//        advancedSettingsSummary = itemView.findViewById(R.id.advancedSettingsSummary);
 
         this.fragmentActivity = fragmentActivity;
     }
@@ -53,10 +53,10 @@ public class ReminderViewHolder extends RecyclerView.ViewHolder {
         editTime.setText(minutesToTimeString(editTime.getContext(), reminder.timeInMinutes));
         editTime.setOnFocusChangeListener((v, hasFocus) -> onFocusEditTime(reminder, hasFocus));
 
-        advancedSettings.setOnClickListener(v -> onClickAdvancedSettings(reminder, medicineName));
+//        advancedSettings.setOnClickListener(v -> onClickAdvancedSettings(reminder, medicineName));
 
         editAmount.setText(reminder.amount);
-        advancedSettingsSummary.setText(SummaryHelperKt.reminderSummary(itemView.getContext(), reminder));
+//        advancedSettingsSummary.setText(SummaryHelperKt.reminderSummary(itemView.getContext(), reminder));
     }
 
     private void onFocusEditTime(Reminder reminder, boolean hasFocus) {

@@ -76,7 +76,7 @@
         android:id="@+id/advancedReminderSettingsFragment"
         android:name="com.futsch1.medtimer.medicine.AdvancedReminderSettingsFragment"
         android:label="@string/advanced_settings"
-        tools:layout="@layout/fragment_advanced_reminder_settings">
+        tools:layout="@layout/fragment_andvanced_remainder_settings">
         <argument
             android:name="reminderId"
             app:argType="integer" />

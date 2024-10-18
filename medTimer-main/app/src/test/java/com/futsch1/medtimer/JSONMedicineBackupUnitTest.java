@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 import android.graphics.Color;
 
-import com.futsch1.medtimer.database.JSONMedicineBackup;
 import com.futsch1.medtimer.database.Medicine;
 import com.futsch1.medtimer.database.MedicineWithReminders;
 import com.futsch1.medtimer.database.Reminder;

@@ -52,18 +52,13 @@
 
         </LinearLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/open_advanced_settings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/advanced_settings"
-            app:backgroundTint="#009688"
-            app:icon="@drawable/gear" />
+
 
         <TextView
             android:id="@+id/advancedSettingsSummary"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Everyday"/>
 
     </LinearLayout>
 

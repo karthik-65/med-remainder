@@ -20,7 +20,7 @@ android {
 
     defaultConfig {
         applicationId = "com.futsch1.medtimer"
-        minSdk = 33
+        minSdk = 28
         targetSdk = 35
         versionCode = 73
         versionName = "1.10.0"

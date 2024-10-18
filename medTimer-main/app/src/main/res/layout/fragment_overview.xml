@@ -8,68 +8,66 @@
     android:orientation="vertical"
     tools:context=".overview.OverviewFragment">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/nextRemindersCard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="2dp"
-        app:contentPadding="10dp">
+<!--    <com.google.android.material.card.MaterialCardView-->
+<!--        android:id="@+id/nextRemindersCard"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="8dp"-->
+<!--        app:cardCornerRadius="10dp"-->
+<!--        app:cardElevation="2dp"-->
+<!--        app:contentPadding="10dp"/>-->
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/linearLayout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
 
-            <TextView
-                android:id="@+id/nextRemindersText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/next_reminders"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/nextReminders"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+<!--            <TextView-->
+<!--                android:id="@+id/nextRemindersText"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/next_reminders"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintBottom_toTopOf="@+id/nextReminders"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/nextReminders"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:scrollbars="vertical"
-                app:layout_constraintBottom_toTopOf="@+id/expandNextReminders"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHeight="wrap_content_constrained"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nextRemindersText" />
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/nextReminders"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:scrollbars="vertical"-->
+<!--                app:layout_constraintBottom_toTopOf="@+id/expandNextReminders"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHeight="wrap_content_constrained"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/nextRemindersText" />-->
 
-            <Button
-                android:id="@+id/expandNextReminders"
-                style="?attr/materialIconButtonFilledTonalStyle"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:contentDescription="@string/show_all"
-                app:icon="@drawable/chevron_down"
-                app:iconGravity="textStart"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nextReminders"
-                tools:ignore="TouchTargetSizeCheck" />
+<!--            <Button-->
+<!--                android:id="@+id/expandNextReminders"-->
+<!--                style="?attr/materialIconButtonFilledTonalStyle"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:contentDescription="@string/show_all"-->
+<!--                app:icon="@drawable/chevron_down"-->
+<!--                app:iconGravity="textStart"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/nextReminders"-->
+<!--                tools:ignore="TouchTargetSizeCheck" />-->
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
 
-    </com.google.android.material.card.MaterialCardView>
-
-    <Button
-        android:id="@+id/logManualDose"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:backgroundTint="#009688"
-        android:text="@string/log_additional_dose"
-        app:icon="@drawable/capsule" />
+<!--    <Button-->
+<!--        android:id="@+id/logManualDose"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="5dp"-->
+<!--        android:layout_marginEnd="5dp"-->
+<!--        android:backgroundTint="#009688"-->
+<!--        android:text="@string/log_additional_dose"-->
+<!--        app:icon="@drawable/capsule" />-->
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/latestRemindersCard"
@@ -114,10 +112,12 @@
                         android:layout_height="wrap_content"
                         android:checkable="true"
                         android:checked="false"
+                        android:padding="10dp"
                         android:text="@string/show_only_open"
                         app:checkedIcon="@drawable/funnel"
                         app:checkedIconVisible="true"
-                        app:chipMinTouchTargetSize="0dp" />
+                        app:chipMinTouchTargetSize="48dp" /> <!-- Set to a recommended size -->
+
 
                 </com.google.android.material.chip.ChipGroup>
             </LinearLayout>

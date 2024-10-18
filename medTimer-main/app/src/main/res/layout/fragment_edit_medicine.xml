@@ -19,17 +19,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/selectIcon"
-                style="?attr/materialIconButtonFilledStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="#000000"
-                android:textColor="#FFFFFF"
-                app:backgroundTint="#009688"
-                app:iconPadding="0dp"
-                app:iconTint="#000000" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -41,39 +30,13 @@
                     android:id="@+id/editMedicineName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:padding="10dp"/>
 
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
-            <com.google.android.material.materialswitch.MaterialSwitch
-                android:id="@+id/enableColor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#F8F8F8"
-                android:backgroundTint="#FFFFFF"
-                android:text="@string/color"
-                android:textColor="#000000" />
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/selectColor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/select_color"
-                app:backgroundTint="#009688"
-                app:rippleColor="#FFFFFF" />
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

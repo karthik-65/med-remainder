@@ -58,7 +58,7 @@ public class MedicineViewHolder extends RecyclerView.ViewHolder {
             ViewColorHelper.setDefaultColors((MaterialCardView) itemView, Arrays.asList(medicineNameView, remindersSummaryView));
         }
 
-        ViewColorHelper.setIconToImageView((MaterialCardView) itemView, itemView.findViewById(R.id.medicineIcon), medicineWithReminders.medicine.iconId);
+//        ViewColorHelper.setIconToImageView((MaterialCardView) itemView, itemView.findViewById(R.id.medicineIcon), medicineWithReminders.medicine.iconId);
     }
 
     private void navigateToEditFragment(MedicineWithReminders medicineWithReminders) {
